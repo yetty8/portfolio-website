@@ -1,24 +1,20 @@
-import type { Metadata } from "next";
+// app/layout.tsx
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { ThemeProvider } from "./theme-provider";
 
 const inter = Inter({ 
-  subsets: ["latin"], 
-  variable: "--font-sans" 
+  subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 const poppins = Poppins({
-  weight: ['400', '500', '600', '700'],
-  subsets: ['latin'],
-  variable: '--font-poppins',
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-poppins",
 });
-
-export const metadata: Metadata = {
-  title: "Yetbarek Temesgen | Full-Stack Developer",
-  description: "Full-Stack Web Developer with experience in modern web technologies.",
-};
 
 export default function RootLayout({
   children,
@@ -30,9 +26,16 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${poppins.variable} font-sans antialiased text-foreground bg-background`}
       >
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
