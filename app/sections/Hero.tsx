@@ -129,7 +129,7 @@ const Hero = () => {
               <FiArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <a
-              href="/Yetbarek-Resume.pdf"
+              href="/files/Yetbarek-Resume-v2.pdf"
               download
               className="group flex items-center gap-2 px-8 py-4 text-sm font-medium text-white transition-all bg-transparent hover:bg-white/10 rounded-lg border border-white/20"
             >
