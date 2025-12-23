@@ -15,11 +15,11 @@ export async function POST(request: Request) {
       );
     }
 
-    const { data, error } = await resend.emails.send({
-      from: 'Portfolio <onboarding@resend.dev>',
-      to: 'yetbarek.tech@gmail.com',
-      reply_to: email,
-      subject: subject || `New Contact Form Submission from ${name}`,
+ const { data, error } = await resend.emails.send({
+  from: 'Portfolio <onboarding@resend.dev>',
+  to: 'yetbarek.tech@gmail.com',
+  replyTo: email,  // Changed from reply_to to replyTo
+  subject: subject || `New Contact Form Submission from ${name}`,
       text: `
         New message from your portfolio:
         
