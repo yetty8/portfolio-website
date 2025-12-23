@@ -9,12 +9,7 @@ const nextConfig = {
       },
     ],
   },
-  // Add experimental settings for better theme support
-  experimental: {
-    forceSwcTransforms: true,
-    optimizePackageImports: ['next-themes'],
-  },
-  // Ensure proper CSS handling
+  // Remove experimental settings that conflict with Turbopack
   compiler: {
     styledComponents: true,
   },
@@ -34,4 +29,11 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
+// Only enable optimizePackageImports in production
+if (process.env.NODE_ENV === 'production') {
+  nextConfig.experimental = {
+    optimizePackageImports: ['next-themes'],
+  };
+}
+
+module.exports = nextConfig;
