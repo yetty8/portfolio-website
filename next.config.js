@@ -5,11 +5,33 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '**', // This allows all domains
+        hostname: '**',
       },
     ],
   },
-  // Add any other configurations you need
+  // Add experimental settings for better theme support
+  experimental: {
+    forceSwcTransforms: true,
+    optimizePackageImports: ['next-themes'],
+  },
+  // Ensure proper CSS handling
+  compiler: {
+    styledComponents: true,
+  },
+  // Add security headers
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+        ],
+      },
+    ];
+  },
 }
 
 module.exports = nextConfig
