@@ -1,8 +1,7 @@
-// app/theme-provider.tsx
 "use client";
 
-import { ThemeProvider as NextThemesProvider } from "next-themes";
-import type { ThemeProviderProps } from "next-themes/dist/types";
+import { ThemeProvider as NextThemesProvider, useTheme as useNextTheme } from "next-themes";
+import { type ThemeProviderProps } from "next-themes/dist/types";
 
 export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
   return (
@@ -18,4 +17,5 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
   );
 }
 
-export { useTheme } from "next-themes";
+// Re-export the useTheme hook
+export const useTheme = useNextTheme;
