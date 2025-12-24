@@ -1,11 +1,10 @@
-// app/layout.tsx
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import { ThemeProvider } from "next-themes";
+import { ThemeProvider } from "./theme-provider";
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
 });
@@ -23,19 +22,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-      <body
-        className={`${inter.variable} ${poppins.variable} font-sans antialiased text-foreground bg-background`}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-        </ThemeProvider>
+      <body className={`${inter.variable} ${poppins.variable} font-sans antialiased text-foreground bg-background`}>
+     <ThemeProvider>
+  <body className={`${inter.variable} ${poppins.variable} font-sans antialiased text-foreground bg-background`}>
+    <Navbar />
+    <main>{children}</main>
+    <Footer />
+  </body>
+</ThemeProvider>
       </body>
     </html>
   );
