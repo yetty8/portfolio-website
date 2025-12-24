@@ -4,7 +4,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useTheme } from "next-themes";
+import { useTheme } from "next-themes/dist/use-theme";
 import { FiSun, FiMoon } from "react-icons/fi";
 
 const navItems = [
