@@ -23,7 +23,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body className={`${inter.variable} ${poppins.variable} font-sans antialiased text-foreground bg-background`}>
-     <ThemeProvider>
+       <ThemeProvider
+  attribute="class"
+  defaultTheme="system"
+  enableSystem
+  disableTransitionOnChange
+>
   <body className={`${inter.variable} ${poppins.variable} font-sans antialiased text-foreground bg-background`}>
     <Navbar />
     <main>{children}</main>

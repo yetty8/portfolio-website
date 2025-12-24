@@ -69,18 +69,16 @@ const Hero = () => {
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover"
-          poster="/poster.jpg"
-        >
-          <source src="/code.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+       <video
+  autoPlay
+  muted
+  loop
+  playsInline
+  className="w-full h-full object-cover"
+>
+  <source src="/code.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
         <div className="absolute inset-0 bg-black/60" />
       </div>
 
