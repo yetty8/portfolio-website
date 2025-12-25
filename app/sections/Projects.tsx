@@ -7,9 +7,9 @@ import { FaGithub, FaExternalLinkAlt, FaTimes } from "react-icons/fa";
 const projects = [
   {
     title: "AI Task Manager",
-    description: "An AI-powered task management application with smart organization, productivity features, and AI-assisted task prioritization.",
-    challenge: "Creating an intuitive task management system that adapts to user behavior and provides intelligent suggestions.",
-    solution: "Implemented machine learning algorithms to analyze task patterns and provide smart suggestions. Used React for the frontend and Node.js with Express for the backend, with MongoDB for data storage.",
+    description: "AI-powered task management with smart organization and AI-assisted prioritization.",
+    challenge: "Designing an adaptive system that understands user behavior and provides intelligent suggestions.",
+    solution: "Implemented ML algorithms for task predictions, used React frontend, Node.js/Express backend, and MongoDB storage.",
     img: "/task.jpg",
     github: "https://github.com/yetty8/AI-TASK-MANAGER",
     live: "https://ai-task-manager-2.vercel.app/",
@@ -17,9 +17,9 @@ const projects = [
   },
   {
     title: "IT Help-Desk",
-    description: "IT Help-Desk is a web application that allows users to submit tickets for support and track their status.",
-    challenge: "Building a streamlined support ticketing system with real-time updates and status tracking.",
-    solution: "Developed a full-stack application with React frontend and Node.js backend, implementing WebSocket for real-time updates and role-based access control for different user types.",
+    description: "Submit tickets for support and track status in real-time.",
+    challenge: "Real-time ticket tracking with role-based access for different users.",
+    solution: "Full-stack React + Node.js app with WebSocket for live updates.",
     img: "/IT-helpdesk.jpg",
     github: "https://github.com/yetty8/IT-Help-Desk",
     live: "https://it-help-desk-mauve.vercel.app/",
@@ -27,9 +27,9 @@ const projects = [
   },
   {
     title: "E-Commerce Store",
-    description: "An online store built with React, Redux, and Stripe integration for payments.",
-    challenge: "Creating a seamless shopping experience with secure payment processing.",
-    solution: "Built a responsive e-commerce platform with product catalog, shopping cart, and secure checkout using Stripe integration. Implemented Redux for state management and responsive design for all devices.",
+    description: "Online store with Stripe integration for secure payments.",
+    challenge: "Creating seamless checkout and shopping experience.",
+    solution: "Built responsive UI with React + Redux, integrated Stripe for payments.",
     img: "/website.jpg",
     github: "https://github.com/yetty8/ecommerce-store",
     live: "https://ecommerce-store-orpin-chi.vercel.app/",
@@ -37,9 +37,9 @@ const projects = [
   },
   {
     title: "Weather App",
-    description: "A weather application built with Django, featuring real-time data, responsive UI, and location-based forecasts.",
-    challenge: "Providing accurate weather data with a clean, intuitive interface.",
-    solution: "Integrated with a weather API to fetch real-time data, implemented geolocation for automatic local weather, and created a responsive UI with Django templates and custom CSS.",
+    description: "Django-based weather app with real-time data and geolocation.",
+    challenge: "Accurate weather updates with clean UI.",
+    solution: "Integrated weather API with geolocation, built responsive UI with Django templates.",
     img: "/weather.jpg",
     github: "https://github.com/yetty8/Django-Weather-App-1",
     live: "https://web-production-fd1a3.up.railway.app/",
@@ -47,9 +47,9 @@ const projects = [
   },
   {
     title: "Blog",
-    description: "A personal blog built with React and Tailwind CSS, featuring dynamic categories and smooth routing.",
-    challenge: "Creating a performant blog with rich content and smooth navigation.",
-    solution: "Built with React for the frontend, implementing client-side routing with React Router and dynamic content loading. Used Tailwind CSS for styling and Markdown for content management.",
+    description: "React + Tailwind CSS blog with dynamic categories and smooth routing.",
+    challenge: "Performance and smooth navigation for rich content.",
+    solution: "React frontend with React Router, Tailwind styling, Markdown content.",
     img: "/travel.jpg",
     github: "https://github.com/yetty8/MyBlog",
     live: "https://my-blog-ochre-rho.vercel.app/",
@@ -57,15 +57,16 @@ const projects = [
   },
   {
     title: "Hotel Website",
-    description: "A modern hotel booking UI with animations, responsive design, and seamless user experience.",
-    challenge: "Designing an intuitive booking interface with a focus on user experience.",
-    solution: "Created a responsive booking platform with smooth animations, real-time availability checking, and a clean, modern UI using React and Framer Motion for animations.",
+    description: "Modern hotel booking UI with animations and responsive design.",
+    challenge: "Creating intuitive booking experience with smooth animations.",
+    solution: "Responsive React site with Framer Motion animations and real-time availability.",
     img: "/Hotel.jpg",
     github: "https://github.com/yetty8/Hotel",
     live: "https://hotel-one-nu.vercel.app/",
     techStack: ["React", "Framer Motion", "Tailwind CSS"]
   },
 ];
+
 interface Project {
   title: string;
   description: string;
@@ -108,9 +109,9 @@ const ProjectModal = ({ project, onClose }: { project: Project | null, onClose: 
           <img
             src={project.img}
             alt={project.title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover rounded-t-2xl"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent rounded-t-2xl" />
         </div>
 
         <div className="p-6 md:p-8">
@@ -168,18 +169,20 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="py-20 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors"
+      className="py-20 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold text-center mb-12"
-        >
-          Featured Projects
-        </motion.h2>
+<motion.h2
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6 }}
+  className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-4 text-center"
+>
+  Featured Projects
+</motion.h2>
+
+<div className="w-20 h-1 mb-12 mx-auto bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full"></div>
 
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, i) => (
@@ -193,7 +196,7 @@ export default function Projects() {
                          hover:shadow-2xl transform hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 cursor-pointer"
               onClick={() => setSelectedProject(project)}
             >
-              <div className="relative overflow-hidden h-48">
+              <div className="relative overflow-hidden h-48 rounded-t-xl">
                 <img
                   src={project.img}
                   alt={project.title}
