@@ -1,11 +1,9 @@
 "use client";
-
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FaCode, FaServer, FaTools } from "react-icons/fa";
 import { SiTypescript, SiNextdotjs, SiReact, SiNodedotjs, SiTailwindcss, SiMongodb } from "react-icons/si";
 import Link from "next/link";
-
 const aboutItems = [
   {
     title: "Frontend Development",
@@ -26,7 +24,6 @@ const aboutItems = [
     icon: <FaTools className="w-8 h-8 text-purple-600 dark:text-purple-400" />
   }
 ];
-
 const techStack = [
   { name: "TypeScript", icon: <SiTypescript className="w-6 h-6" />, color: "text-blue-600 dark:text-blue-400", category: "Frontend/Backend" },
   { name: "Next.js", icon: <SiNextdotjs className="w-6 h-6" />, color: "text-black dark:text-white", category: "Frontend" },
@@ -35,12 +32,10 @@ const techStack = [
   { name: "Tailwind CSS", icon: <SiTailwindcss className="w-6 h-6" />, color: "text-cyan-500 dark:text-cyan-400", category: "Frontend" },
   { name: "MongoDB", icon: <SiMongodb className="w-6 h-6" />, color: "text-green-500 dark:text-green-400", category: "Database" }
 ];
-
 export default function About() {
   return (
     <section id="about" className="py-20 bg-white dark:bg-gray-900">
       <div className="container px-6 mx-auto max-w-7xl">
-
         {/* Profile & Intro */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -50,13 +45,16 @@ export default function About() {
           className="flex flex-col md:flex-row items-center md:items-start mb-16 gap-10"
         >
           <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl flex-shrink-0 transform transition-transform duration-500 hover:scale-105">
-            <Image
-              src="/Yetty3.jpg"
-              alt="Yetbarek Temesgen"
-              fill
-              className="object-cover"
-              priority
-            />
+           <Image
+             src="/Yetty3.jpg"
+             alt="Yetbarek Temesgen"
+             fill
+             priority
+             sizes="(max-width: 768px) 192px, 224px"
+             className="object-cover"
+             style={{ objectPosition: "20% 30%" }}
+         />
+
           </div>
           <div className="flex-1">
             <motion.h2
