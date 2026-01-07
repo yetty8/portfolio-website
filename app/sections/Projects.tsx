@@ -65,6 +65,36 @@ const projects = [
     live: "https://hotel-one-nu.vercel.app/",
     techStack: ["React", "Framer Motion", "Tailwind CSS"]
   },
+  {
+    title: "Nature Notes",
+    description: "Angular app that cycles nature videos with one-click scene switching.",
+    challenge: "Building a smooth video experience with seamless transitions.",
+    solution: "Developed an Angular application with RxJS for state management, implementing smooth video transitions and a clean, distraction-free UI for nature enthusiasts.",
+    img: "/natures.jpg",
+    github: "https://github.com/yetty8/Angular",
+    live: "https://angular-production-7992.up.railway.app/",
+    techStack: ["Angular", "RxJS", "TypeScript"]
+  },
+  {
+    title: "NextTask",
+    description: "NextTask is a modern, cloud-based task management application built with Next.js and AWS.",
+    challenge: "Building a scalable task management system with real-time updates and cloud integration.",
+    solution: "Developed a full-stack application with Next.js frontend and AWS backend, implementing real-time updates with WebSockets and cloud storage for task data.",
+    img: "/nexttasks.jpg",
+    github: "https://github.com/yetty8/aws-nextjs-task-manager",
+    live: "https://aws-nextjs-task-manager2.vercel.app/",
+    techStack: ["Next.js", "AWS", "TypeScript", "Tailwind CSS"]
+  },
+  {
+    title: "World Map Quiz",
+    description: "Interactive quiz game testing knowledge of world capitals and countries.",
+    challenge: "Creating an engaging educational game with interactive maps.",
+    solution: "Built an interactive quiz using the Google Maps API, implementing game mechanics, scoring system, and responsive design for an engaging learning experience.",
+    img: "/world.jpg",
+    github: "https://github.com/yetty8/world-map-quiz-game",
+    live: "https://world-map-quiz-game.vercel.app/",
+    techStack: ["JavaScript", "Google Maps API", "HTML5", "CSS3"]
+  }
 ];
 
 interface Project {
